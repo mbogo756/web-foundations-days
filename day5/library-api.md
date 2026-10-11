@@ -17,3 +17,35 @@ This API manages books. Each book has an id, title, author and publicationYear.
 - Description: Return the book with the specified ID.
 - Request body: None.
 - Success status: 200 OK.
+
+## Create a book
+
+- Method: POST
+- Path: /books
+- Description: Create a book and assign it an ID.
+- Success status: 201 Created.
+- Example request body:
+
+```json
+{
+  "title": "The River Between",
+  "author": "Ngugi wa Thiong'o",
+  "publicationYear": 1965
+}
+```
+
+## Update a book
+
+- Method: PUT
+- Path: /books/{id}
+- Description: Replace all editable fields of an existing book.
+- Success status: 200 OK.
+- Example request body:
+
+```json
+{
+  "title": "The River Between",
+  "author": "Ngugi wa Thiong'o",
+  "publicationYear": 1965
+}
+```
