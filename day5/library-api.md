@@ -49,3 +49,26 @@ This API manages books. Each book has an id, title, author and publicationYear.
   "publicationYear": 1965
 }
 ```
+
+## Delete a book
+
+- Method: DELETE
+- Path: /books/{id}
+- Description: Delete the book with the specified ID.
+- Request body: None.
+- Success status: 204 No Content.
+
+## List books by an author
+
+- Method: GET
+- Path: /books?author=Ngugi%20wa%20Thiong%27o
+- Description: Return books matching the author query parameter.
+- Request body: None.
+- Success status: 200 OK, with an empty array if no books match.
+
+## Error responses
+
+- 400 Bad Request: The request contains invalid data.
+  Example: POST /books is missing a required title, or publicationYear is not an integer.
+- 404 Not Found: The requested book does not exist.
+  Example: GET /books/999 requests a book ID that does not exist.
